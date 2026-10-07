@@ -6,8 +6,13 @@ export const CONFIG = {
   /** Tally (or similar) waitlist form URL. 'PLACEHOLDER' hides the CTA button. */
   waitlistUrl: 'PLACEHOLDER',
 
-  /** Donation link — shown in the footer. 'PLACEHOLDER' hides it. */
-  donateUrl: 'https://github.com/sponsors/Llegion404',
+  /**
+   * Donation link — shown in the footer. 'PLACEHOLDER' hides it.
+   * NOTE: GitHub Sponsors is unavailable from Uzbekistan (Stripe/PayPal rails).
+   * Working options: Dodo Payments link (supports UZ merchants, individuals),
+   * or a crypto-donate page — set the URL here once the account exists.
+   */
+  donateUrl: 'PLACEHOLDER',
 
   /** Repo URL for the "star on GitHub" footer link. */
   repoUrl: 'https://github.com/Llegion404/vsdx2drawio',

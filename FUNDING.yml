@@ -1,10 +1,10 @@
 # Support the project
-
-GitHub Sponsors is the primary channel:
-
-github: [Llegion404]
-
-# Alternatives — uncomment and fill in your own account:
-# ko-fi: yourkofi
-# liberapay: yourliberapay
-# custom: ['https://www.buymeacoffee.com/yourlink']
+#
+# GitHub Sponsors is NOT available from Uzbekistan (payouts run on Stripe/PayPal).
+# Working channels for this project:
+#   1. Dodo Payments (merchant of record, supports UZ individuals) — paste the
+#      donation/product page URL as a custom entry once onboarding is done.
+#   2. Crypto — a page listing wallet addresses (or the addresses on the site itself).
+#
+# Fill in and uncomment when ready:
+# custom: ['https://your-dodo-store-link', 'https://vsdx2drawio.example/donate']
