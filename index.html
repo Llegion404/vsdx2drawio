@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vsdx2drawio — Convert Visio files to draw.io, free, in your browser</title>
+    <meta
+      name="description"
+      content="Convert Microsoft Visio .vsdx and .vssx files to editable draw.io diagrams. Free, no signup, files never leave your browser. Editable vector shapes — not screenshots."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content="vsdx2drawio — free Visio → draw.io converter" />
+    <meta
+      property="og:description"
+      content="Drop a .vsdx, get an editable draw.io diagram. 100% in your browser, no signup, files never uploaded."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>vsdx<span>2</span>drawio</h1>
+      <p class="tagline">
+        Convert Microsoft Visio <strong>.vsdx</strong> / <strong>.vssx</strong> files to
+        <strong>editable draw.io diagrams</strong> — free, no signup.
+      </p>
+      <p class="privacy">🔒 100% client-side: your files never leave your browser.</p>
+    </header>
+
+    <main>
+      <section id="dropzone" tabindex="0" aria-label="Drop a Visio file here or click to browse">
+        <div class="dz-inner">
+          <div class="dz-icon">⬇</div>
+          <p class="dz-main">Drop a <strong>.vsdx</strong> or <strong>.vssx</strong> file here</p>
+          <p class="dz-sub">or click to browse — nothing is uploaded</p>
+        </div>
+        <input type="file" id="file-input" accept=".vsdx,.vssx,.vstx" hidden />
+      </section>
+
+      <section id="status" hidden>
+        <p id="status-text"></p>
+      </section>
+
+      <section id="results" hidden>
+        <div class="results-head">
+          <h2 id="file-title"></h2>
+          <div class="actions">
+            <button id="download-drawio" class="primary">Download .drawio</button>
+            <button id="download-svg">Download SVG (this page)</button>
+          </div>
+        </div>
+        <div id="page-tabs" role="tablist"></div>
+        <div id="preview"></div>
+        <p id="stats-line" class="stats"></p>
+      </section>
+
+      <section id="cta" hidden>
+        <div class="cta-box">
+          <h3>Want more than conversion?</h3>
+          <p>
+            We're building the tool this converter is a preview of: a diagramming app for IT &amp;
+            network teams with <strong>vendor stencil libraries</strong>,
+            <strong>CSV/SQL data-linked shapes</strong> (generate rack BOMs from diagrams),
+            <strong>scaled plotter output</strong>, and <strong>SSO included at base price</strong> —
+            around <strong><span id="price-wording">$99–199/seat, one-time</span></strong>. Self-hostable. No subscription gouging.
+          </p>
+          <a id="waitlist-link" class="primary cta-btn" href="#" target="_blank" rel="noopener"
+            >Join the waitlist →</a
+          >
+          <p class="cta-fine">No spam. One email when it ships, maybe one before.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <details id="fidelity">
+        <summary>What converts perfectly — and what doesn't (yet)</summary>
+        <div class="fidelity-grid">
+          <div>
+            <h4>✅ Converted as editable vectors</h4>
+            <ul>
+              <li>Pages, shapes, groups, rotation &amp; flips</li>
+              <li>Fill / line colors, line weight, dashes</li>
+              <li>Custom geometry — arcs, curves, complex vendor shapes (as editable draw.io stencils)</li>
+              <li>Glued connectors (re-attached to your shapes)</li>
+              <li>Embedded images (PNG/JPG)</li>
+              <li>Stencil packs (.vssx) — every master as its own page</li>
+            </ul>
+          </div>
+          <div>
+            <h4>⚠️ Approximated or skipped</h4>
+            <ul>
+              <li>Connector re-routing: lines connect the right shapes but take their own path</li>
+              <li>Mixed formatting inside one text block (first style wins)</li>
+              <li>Theme variants, gradients, shadows, rounded corners</li>
+              <li>Splines/NURBS → polyline approximation</li>
+              <li>OLE objects / WMF metafiles are skipped</li>
+              <li>Old binary .vsd files — .vsdx/.vssx/.vstx only</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <p class="oss-line" id="oss-line" hidden>
+        <span class="oss-badge">AGPL-3.0</span>
+        <a id="repo-link" href="#" target="_blank" rel="noopener">source on GitHub</a>
+        · free &amp; no tracking — if it saved you time,
+        <a id="donate-link" href="#" target="_blank" rel="noopener">♡ support the project</a>
+      </p>
+      <p>
+        Editable-vector conversion: shapes, groups, connectors, pages and stencil masters become real
+        draw.io shapes you can keep editing in
+        <a href="https://app.diagrams.net" target="_blank" rel="noopener">diagrams.net</a> — not
+        rasterized screenshots. Runs entirely in your browser; no file ever touches a server.
+      </p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

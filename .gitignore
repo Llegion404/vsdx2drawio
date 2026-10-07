@@ -1,0 +1,10 @@
+# build output
+dist/
+# dependencies
+node_modules/
+# local test corpus — third-party files with mixed licenses, fetch per README
+corpus/
+*.b64
+# editor/OS
+.DS_Store
+*.local
